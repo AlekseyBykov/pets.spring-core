@@ -15,20 +15,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class DependencyInjectionWithoutSpringTest {
 
-	private static Element dataElement;
+	private static ElementSearchService elementSearchService;
 
 	@BeforeClass
 	public static void setUp() throws Exception {
 		// dependency
-		Locator locator = new ElementLocator(DependencyInjectionWithoutSpringTest.class.getResource("/data.xml").getPath());
+		Locator locator = new ElementLocator();
 		// dependency injection performed
-		ElementSearchService elementSearchService = new ElementSearchService(locator);
-
-		dataElement = elementSearchService.find("data", "1");
+		elementSearchService = new ElementSearchService(locator);
 	}
 
 	@Test
-	public void test() {
-		assertEquals("1", dataElement.getAttribute("id"));
+	public void testFindElement() throws Exception {
+		final String searchPath = DependencyInjectionWithoutSpringTest.class.getResource("/data.xml").getPath();
+		Element element = elementSearchService.findElement(searchPath, "data", "1");
+
+		assertEquals("1", element.getAttribute("id"));
 	}
 }

@@ -16,19 +16,6 @@ import java.io.IOException;
  * @author Aleksey Bykov
  * @since 15.08.2020
  */
-public abstract class Locator {
-
-	protected XPath xpath;
-	protected Document document;
-
-	public Locator(String searchPath) throws ParserConfigurationException, IOException, SAXException {
-		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-		documentBuilderFactory.setValidating(false);
-		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-		document = documentBuilder.parse(searchPath);
-		XPathFactory xpathFactory = XPathFactory.newInstance();
-		xpath = xpathFactory.newXPath();
-	}
-
-	public abstract Element findElementById(String elementName, String id) throws XPathExpressionException;
+public interface Locator {
+	Element findElement(String searchPath, String elementName, String id) throws Exception;
 }
