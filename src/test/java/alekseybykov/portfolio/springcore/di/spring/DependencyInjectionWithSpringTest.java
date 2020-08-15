@@ -1,13 +1,12 @@
-package alekseybykov.portfolio.springcore.di;
+package alekseybykov.portfolio.springcore.di.spring;
 
+import alekseybykov.portfolio.springcore.di.manual.DependencyInjectionWithoutSpringTest;
 import alekseybykov.portfolio.springcore.di.services.ElementSearchService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.w3c.dom.Element;
-
-import javax.xml.xpath.XPathExpressionException;
 
 import static org.junit.Assert.assertEquals;
 

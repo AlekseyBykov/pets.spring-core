@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.di;
+package alekseybykov.portfolio.springcore.di.manual;
 
 import alekseybykov.portfolio.springcore.di.locators.ElementLocator;
 import alekseybykov.portfolio.springcore.di.locators.Locator;
@@ -21,7 +21,7 @@ public class DependencyInjectionWithoutSpringTest {
 	public static void setUp() throws Exception {
 		// dependency
 		Locator locator = new ElementLocator();
-		// dependency injection performed
+		// dependency injection is performed "manually"
 		elementSearchService = new ElementSearchService(locator);
 	}
 
