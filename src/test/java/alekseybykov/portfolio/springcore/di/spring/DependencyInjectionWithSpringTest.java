@@ -21,7 +21,7 @@ public class DependencyInjectionWithSpringTest {
 	@BeforeClass
 	public static void setUp() {
 		// dependency injection is performed by the container
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("di/application-context.xml");
 		elementSearchService = applicationContext.getBean("elementSearchService", ElementSearchService.class);
 	}
 
