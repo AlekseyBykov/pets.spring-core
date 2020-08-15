@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dataGroup id="1" description="Some description for data group tag 1">
+	<data id="1" description="Some description for data tag 1">
+		<item>item01</item>
+		<item>item02</item>
+		<item>item03</item>
+		<item>item04</item>
+	</data>
+	<data id="2" description="Some description for data tag 2">
+		<item>item01</item>
+		<item>item02</item>
+		<item>item03</item>
+		<item>item04</item>
+	</data>
+	<data id="3" description="Some description for data tag 3">
+		<item>item01</item>
+		<item>item02</item>
+		<item>item03</item>
+		<item>item04</item>
+	</data>
+	<data id="4" description="Some description for data tag 4">
+		<item>item01</item>
+		<item>item02</item>
+		<item>item03</item>
+		<item>item04</item>
+	</data>
+</dataGroup>
