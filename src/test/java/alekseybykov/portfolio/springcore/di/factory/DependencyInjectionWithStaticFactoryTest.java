@@ -1,8 +1,6 @@
 package alekseybykov.portfolio.springcore.di.factory;
 
 import alekseybykov.portfolio.springcore.di.factories.ElementLocatorFactory;
-import alekseybykov.portfolio.springcore.di.locators.ElementLocator;
-import alekseybykov.portfolio.springcore.di.locators.Locator;
 import alekseybykov.portfolio.springcore.di.manual.DependencyInjectionWithoutSpringTest;
 import alekseybykov.portfolio.springcore.di.services.ElementSearchService;
 import org.junit.BeforeClass;
