@@ -18,7 +18,7 @@ public class ConstructorInjectionTest {
 
 	@BeforeClass
 	public static void setUp() {
-		applicationContext = new ClassPathXmlApplicationContext("di/application-context.xml");
+		applicationContext = new ClassPathXmlApplicationContext("di/constructors/application-context.xml");
 	}
 
 	@Test

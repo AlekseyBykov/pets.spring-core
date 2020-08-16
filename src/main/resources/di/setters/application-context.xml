@@ -3,8 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="elementLocator" class="alekseybykov.portfolio.springcore.di.locators.ElementLocator"/>
-	<bean id="elementSearchService" class="alekseybykov.portfolio.springcore.di.services.ElementSearchService">
-		<constructor-arg ref="elementLocator"/>
+	<bean id="beanA" class="alekseybykov.portfolio.springcore.di.setters.BeanA"/>
+
+	<bean id="beanB" class="alekseybykov.portfolio.springcore.di.setters.BeanB">
+		<property name="beanA" ref="beanA"/>
+		<property name="intValue" value="1"/>
 	</bean>
 </beans>
