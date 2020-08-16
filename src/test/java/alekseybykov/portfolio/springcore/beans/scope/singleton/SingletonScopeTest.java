@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.beanscope.singleton;
+package alekseybykov.portfolio.springcore.beans.scope.singleton;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
