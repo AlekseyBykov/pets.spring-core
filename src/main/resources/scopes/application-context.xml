@@ -3,9 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="firstBean" class="alekseybykov.portfolio.springcore.beans.scope.singleton.FirstBean" name="firstBeanName firstBeanNameToo"/>
-	<bean id="firstBeanToo" class="alekseybykov.portfolio.springcore.beans.scope.singleton.FirstBean"/>
+	<bean id="firstBean" class="alekseybykov.portfolio.springcore.beans.scope.FirstBean" name="firstBeanName firstBeanNameToo"/>
+	<bean id="firstBeanToo" class="alekseybykov.portfolio.springcore.beans.scope.FirstBean"/>
 
-	<bean id="secondBean" class="alekseybykov.portfolio.springcore.beans.scope.singleton.SecondBean"/>
+	<bean id="secondBean" class="alekseybykov.portfolio.springcore.beans.scope.SecondBean"/>
+
+	<bean class="alekseybykov.portfolio.springcore.beans.scope.ThirdBean" scope="prototype"/>
 
 </beans>

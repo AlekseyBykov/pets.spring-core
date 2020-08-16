@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.beans.scope.singleton;
+package alekseybykov.portfolio.springcore.beans.scope;
 
 /**
  * @author Aleksey Bykov
