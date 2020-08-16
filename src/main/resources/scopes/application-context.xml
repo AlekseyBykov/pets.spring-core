@@ -4,6 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="firstBean" class="alekseybykov.portfolio.springcore.beanscope.singleton.FirstBean"/>
+	<bean id="firstBeanToo" class="alekseybykov.portfolio.springcore.beanscope.singleton.FirstBean"/>
+
 	<bean id="secondBean" class="alekseybykov.portfolio.springcore.beanscope.singleton.SecondBean"/>
 
 </beans>

@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
  * @author Aleksey Bykov
@@ -14,12 +15,17 @@ import static junit.framework.TestCase.assertTrue;
 public class SingletonScopeTest {
 
 	@Test
-	public void testSingletonScope() {
+	public void test() {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("scopes/application-context.xml");
 
-		FirstBean instanceOfBean = applicationContext.getBean(FirstBean.class);
-		FirstBean theSameInstanceOfBean = applicationContext.getBean(FirstBean.class);
+		FirstBean instanceOfFirstBean = applicationContext.getBean("firstBean", FirstBean.class);
+		FirstBean theSameInstanceOfFirstBean = applicationContext.getBean("firstBean", FirstBean.class);
 
-		assertTrue(instanceOfBean == theSameInstanceOfBean);
+		assertTrue(instanceOfFirstBean == theSameInstanceOfFirstBean);
+
+		instanceOfFirstBean = applicationContext.getBean("firstBean", FirstBean.class);
+		FirstBean anotherInstanceOfFirstBean = applicationContext.getBean("firstBeanToo", FirstBean.class);
+
+		assertFalse(instanceOfFirstBean == anotherInstanceOfFirstBean);
 	}
 }
