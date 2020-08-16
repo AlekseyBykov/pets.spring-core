@@ -7,4 +7,18 @@
 	<bean id="elementSearchService" class="alekseybykov.portfolio.springcore.di.services.ElementSearchService">
 		<constructor-arg ref="elementLocator"/>
 	</bean>
+
+	<bean id="beanAWithStringArg" class="alekseybykov.portfolio.springcore.di.constructors.BeanA">
+		<constructor-arg value="1"/>
+	</bean>
+
+	<bean id="beanAWithIntArg" class="alekseybykov.portfolio.springcore.di.constructors.BeanA">
+		<constructor-arg value="1" type="int"/>
+	</bean>
+
+	<bean id="beanB" class="alekseybykov.portfolio.springcore.di.constructors.BeanB">
+		<constructor-arg value="0" index="1"/>
+		<constructor-arg value="1" index="0"/>
+	</bean>
+
 </beans>
