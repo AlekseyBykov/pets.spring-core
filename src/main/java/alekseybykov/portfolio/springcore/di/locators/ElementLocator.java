@@ -33,6 +33,8 @@ public class ElementLocator implements Locator {
 	@Override
 	public Element findElement(String searchPath, String elementName, String id) throws IOException, SAXException, XPathExpressionException {
 		Document document = documentBuilder.parse(searchPath);
-		return (Element) xpath.compile("//" + elementName + "[@id='" + id + "']").evaluate(document, XPathConstants.NODE);
+		Element element = (Element) xpath.compile("//" + elementName + "[@id='" + id + "']").evaluate(document, XPathConstants.NODE);
+		element.normalize();
+		return element;
 	}
 }

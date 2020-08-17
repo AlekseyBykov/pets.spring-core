@@ -16,8 +16,6 @@ public class ElementSearchService {
 	}
 
 	public Element findElement(String searchPath, String elementName, String id) throws Exception {
-		Element element = locator.findElement(searchPath, elementName, id);
-		element.normalize();
-		return element;
+		return locator.findElement(searchPath, elementName, id);
 	}
 }
