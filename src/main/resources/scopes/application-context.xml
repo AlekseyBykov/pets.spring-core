@@ -10,4 +10,12 @@
 
 	<bean class="alekseybykov.portfolio.springcore.beans.scope.ThirdBean" scope="prototype"/>
 
+	<bean id="prototypeScopeBean" class="alekseybykov.portfolio.springcore.beans.scope.PrototypeScopeBean" scope="prototype"/>
+	<bean id="singletonScopeBean" class="alekseybykov.portfolio.springcore.beans.scope.SingletonScopeBean">
+		<property name="prototypeScopeBean" ref="prototypeScopeBean"/>
+	</bean>
+	<bean id="acwSingletonScopeBean" class="alekseybykov.portfolio.springcore.beans.scope.ACWSingletonScopeBean">
+		<property name="prototypeScopeBean" ref="prototypeScopeBean"/>
+	</bean>
+
 </beans>

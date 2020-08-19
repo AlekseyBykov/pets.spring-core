@@ -46,4 +46,19 @@ public class BeanScopeTest {
 
 		assertFalse(thirdBean == anotherInstanceOfThirdBean);
 	}
+
+	@Test
+	public void testApplicationContextAware() {
+		SingletonScopeBean singletonScopeBean = applicationContext.getBean(SingletonScopeBean.class);
+		PrototypeScopeBean instanceOfPrototypeScopeBean = singletonScopeBean.getPrototypeScopeBean();
+		PrototypeScopeBean theSameInstanceOfPrototypeScopeBean = singletonScopeBean.getPrototypeScopeBean();
+
+		assertTrue(instanceOfPrototypeScopeBean == theSameInstanceOfPrototypeScopeBean);
+
+		ACWSingletonScopeBean acwSingletonScopeBean = applicationContext.getBean(ACWSingletonScopeBean.class);
+		instanceOfPrototypeScopeBean = acwSingletonScopeBean.getPrototypeScopeBean();
+		PrototypeScopeBean anotherInstanceOfPrototypeScopeBean = acwSingletonScopeBean.getPrototypeScopeBean();
+
+		assertFalse(instanceOfPrototypeScopeBean == anotherInstanceOfPrototypeScopeBean);
+	}
 }
