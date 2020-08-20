@@ -18,4 +18,8 @@
 		<property name="prototypeScopeBean" ref="prototypeScopeBean"/>
 	</bean>
 
+	<bean id="abstractSingletonScopeBean" class="alekseybykov.portfolio.springcore.beans.scope.AbstractSingletonScopeBean">
+		<lookup-method bean="prototypeScopeBean" name="getPrototypeScopeBean"/>
+	</bean>
+
 </beans>

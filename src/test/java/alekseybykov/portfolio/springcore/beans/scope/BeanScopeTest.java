@@ -61,4 +61,14 @@ public class BeanScopeTest {
 
 		assertFalse(instanceOfPrototypeScopeBean == anotherInstanceOfPrototypeScopeBean);
 	}
+
+	@Test
+	public void testMethodInjection() {
+		// Spring will create a proxy
+		AbstractSingletonScopeBean abstractSingletonScopeBean = applicationContext.getBean(AbstractSingletonScopeBean.class);
+		PrototypeScopeBean instanceOfPrototypeScopeBean = abstractSingletonScopeBean.getPrototypeScopeBean();
+		PrototypeScopeBean anotherInstanceOfPrototypeScopeBean = abstractSingletonScopeBean.getPrototypeScopeBean();
+
+		assertFalse(instanceOfPrototypeScopeBean == anotherInstanceOfPrototypeScopeBean);
+	}
 }
