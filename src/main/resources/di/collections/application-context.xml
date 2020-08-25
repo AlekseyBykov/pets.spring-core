@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanWithCollections" class="alekseybykov.portfolio.springcore.di.collections.BeanWithCollections">
+		<property name="list">
+			<list>
+				<value>First value</value>
+				<value>Second value</value>
+				<value>Third value</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>First value</value>
+				<value>Second value</value>
+				<value>Third value</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="key1" value="First value"/>
+				<entry key="key2" value="Second value"/>
+				<entry key="key3" value="Third value"/>
+			</map>
+		</property>
+	</bean>
+</beans>
