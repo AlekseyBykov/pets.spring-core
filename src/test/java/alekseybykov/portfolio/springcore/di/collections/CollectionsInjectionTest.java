@@ -30,6 +30,8 @@ public class CollectionsInjectionTest {
 
 		assertThat(beanWithCollections.getSet(), hasItems("First value", "Third value", "Second value"));
 
+		assertThat(beanWithCollections.getYetAnotherSet(), hasItems("First value", "Third value", "Second value"));
+
 		assertThat(beanWithCollections.getMap(), IsMapContaining.hasEntry("key1", "First value"));
 		assertThat(beanWithCollections.getMap(), IsMapContaining.hasEntry("key2", "Second value"));
 		assertThat(beanWithCollections.getMap(), IsMapContaining.hasEntry("key3", "Third value"));

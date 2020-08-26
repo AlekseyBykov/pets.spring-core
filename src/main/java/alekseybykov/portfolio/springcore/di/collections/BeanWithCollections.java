@@ -14,6 +14,8 @@ public class BeanWithCollections {
 
 	private Set<String> set;
 
+	private Set<String> yetAnotherSet;
+
 	private Map<String, String> map;
 
 	public List<String> getList() {
@@ -38,5 +40,13 @@ public class BeanWithCollections {
 
 	public void setSet(Set<String> set) {
 		this.set = set;
+	}
+
+	public Set<String> getYetAnotherSet() {
+		return yetAnotherSet;
+	}
+
+	public void setYetAnotherSet(Set<String> yetAnotherSet) {
+		this.yetAnotherSet = yetAnotherSet;
 	}
 }
