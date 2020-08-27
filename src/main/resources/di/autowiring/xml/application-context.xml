@@ -8,4 +8,7 @@
 
 	<bean id="beanC" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanC" autowire="byName"/>
 	<bean id="beanD" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanD"/>
+
+	<bean id="beanE" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanE" autowire="constructor"/>
+	<bean id="beanF" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanF"/>
 </beans>

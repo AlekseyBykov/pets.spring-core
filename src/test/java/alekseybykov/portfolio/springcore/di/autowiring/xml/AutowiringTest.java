@@ -35,4 +35,12 @@ public class AutowiringTest {
 
 		assertEquals(beanC.getBeanD(), beanD);
 	}
+
+	@Test
+	public void testAutowiringByConstructorUsingXml() {
+		BeanE beanE = applicationContext.getBean(BeanE.class);
+		BeanF beanF = applicationContext.getBean(BeanF.class);
+
+		assertEquals(beanE.getBeanF(), beanF);
+	}
 }
