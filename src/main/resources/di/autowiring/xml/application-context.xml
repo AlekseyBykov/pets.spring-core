@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanA" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanA" autowire="byType"/>
+	<bean id="beanB" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanB"/>
+
+	<bean id="beanC" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanC" autowire="byName"/>
+	<bean id="beanD" class="alekseybykov.portfolio.springcore.di.autowiring.xml.BeanD"/>
+</beans>
