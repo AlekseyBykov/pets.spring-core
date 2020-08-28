@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanAWithStringArg" class="alekseybykov.portfolio.springcore.xmlconfig.di.constructors.BeanA">
+		<constructor-arg value="1"/>
+	</bean>
+
+	<bean id="beanAWithIntArg" class="alekseybykov.portfolio.springcore.xmlconfig.di.constructors.BeanA">
+		<constructor-arg value="1" type="int"/>
+	</bean>
+
+	<bean id="beanB" class="alekseybykov.portfolio.springcore.xmlconfig.di.constructors.BeanB">
+		<constructor-arg value="0" index="1"/>
+		<constructor-arg value="1" index="0"/>
+	</bean>
+
+</beans>

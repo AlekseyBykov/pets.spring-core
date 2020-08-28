@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanB" class="alekseybykov.portfolio.springcore.xmlconfig.beans.instantiation.BeanB" factory-method="getInstance">
+		<property name="intValue" value="1"/>
+	</bean>
+	<bean id="beanA" class="alekseybykov.portfolio.springcore.xmlconfig.beans.instantiation.BeanA">
+		<constructor-arg ref="beanB"/>
+	</bean>
+
+	<bean id="beanFactory" class="alekseybykov.portfolio.springcore.xmlconfig.beans.instantiation.BeanFactory"/>
+	<bean id="beanC" factory-bean="beanFactory" factory-method="getBeanC"/>
+</beans>

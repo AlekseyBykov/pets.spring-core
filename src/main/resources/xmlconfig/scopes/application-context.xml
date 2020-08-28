@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="firstBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.FirstBean" name="firstBeanName firstBeanNameToo"/>
+	<bean id="firstBeanToo" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.FirstBean"/>
+
+	<bean id="secondBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.SecondBean"/>
+
+	<bean class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.ThirdBean" scope="prototype"/>
+
+	<bean id="prototypeScopeBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.PrototypeScopeBean" scope="prototype"/>
+	<bean id="singletonScopeBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.SingletonScopeBean">
+		<property name="prototypeScopeBean" ref="prototypeScopeBean"/>
+	</bean>
+	<bean id="acwSingletonScopeBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.ACWSingletonScopeBean">
+		<property name="prototypeScopeBean" ref="prototypeScopeBean"/>
+	</bean>
+
+	<bean id="abstractSingletonScopeBean" class="alekseybykov.portfolio.springcore.xmlconfig.beans.scope.AbstractSingletonScopeBean">
+		<lookup-method bean="prototypeScopeBean" name="getPrototypeScopeBean"/>
+	</bean>
+
+</beans>
