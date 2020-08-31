@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans;
+package alekseybykov.portfolio.springcore.javaconfig.beans.retrieving;
 
 /**
  * @author Aleksey Bykov

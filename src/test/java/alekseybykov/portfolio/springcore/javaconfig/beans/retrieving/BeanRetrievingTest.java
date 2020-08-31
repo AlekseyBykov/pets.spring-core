@@ -1,6 +1,5 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.instantiation;
+package alekseybykov.portfolio.springcore.javaconfig.beans.retrieving;
 
-import alekseybykov.portfolio.springcore.javaconfig.beans.BeanA;
 import alekseybykov.portfolio.springcore.javaconfig.config.ApplicationConfig;
 import org.junit.BeforeClass;
 import org.junit.Test;
