@@ -1,5 +1,8 @@
 package alekseybykov.portfolio.springcore.javaconfig.beans.di;
 
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanB;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanC;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanD;
 import alekseybykov.portfolio.springcore.javaconfig.config.ApplicationConfig;
 import org.junit.BeforeClass;
 import org.junit.Test;

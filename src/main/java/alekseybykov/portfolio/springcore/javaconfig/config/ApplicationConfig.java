@@ -1,8 +1,8 @@
 package alekseybykov.portfolio.springcore.javaconfig.config;
 
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.BeanB;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.BeanC;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.BeanD;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanB;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanC;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanD;
 import alekseybykov.portfolio.springcore.javaconfig.beans.retrieving.BeanA;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +15,9 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
 	// All the beans here are singletons.
+
+	// Because all the dependencies are identified manually,
+	// XML configuration is not required.
 
 	@Bean(name = {"anotherNameForBeanA", "yetAnotherNameForBeanA"})
 	public BeanA beanA() {
