@@ -8,12 +8,13 @@ import org.springframework.context.annotation.Configuration;
  * @since 28.08.2020
  */
 @Configuration
-public class ApplicationConfig {
+public class ManuallyIdentifiedConfig {
 
 	// All the beans here are singletons.
 
 	// Because all the dependencies are identified manually,
-	// XML configuration is not required.
+	// XML configuration or additional information about
+	// base package is not provided.
 
 	@Bean
 	public BeanB beanB() {

@@ -1,10 +1,13 @@
 package alekseybykov.portfolio.springcore.javaconfig.beans.di;
 
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.ApplicationConfig;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanE;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanF;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanG;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.ContainerIdentifiedConfig;
 import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanB;
 import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanC;
 import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanD;
-import org.junit.BeforeClass;
+import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.ManuallyIdentifiedConfig;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,15 +21,9 @@ import static org.junit.Assert.assertNotNull;
  */
 public class DependencyInjectionTest {
 
-	private static ApplicationContext applicationContext;
-
-	@BeforeClass
-	public static void setUp() {
-		applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-	}
-
 	@Test
 	public void testInjectManuallyIdentifiedDependencies() {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManuallyIdentifiedConfig.class);
 		BeanD beanD = applicationContext.getBean(BeanD.class);
 		BeanC beanC = beanD.getBeanC();
 
@@ -36,5 +33,19 @@ public class DependencyInjectionTest {
 
 		assertNotNull(beanB);
 		assertEquals("string", beanB.getString());
+	}
+
+	@Test
+	public void testAutowiring() {
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ContainerIdentifiedConfig.class);
+		BeanG beanG = applicationContext.getBean(BeanG.class);
+		BeanF beanF = beanG.getBeanF();
+
+		assertNotNull(beanF);
+
+		BeanE beanE = beanF.getBeanE();
+
+		assertNotNull(beanE);
+		assertEquals("string", beanE.getString());
 	}
 }
