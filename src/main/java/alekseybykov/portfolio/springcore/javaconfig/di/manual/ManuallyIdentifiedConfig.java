@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.di.manual;
+package alekseybykov.portfolio.springcore.javaconfig.di.manual;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

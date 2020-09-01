@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.retrieving;
+package alekseybykov.portfolio.springcore.javaconfig.retrieving;
 
 import org.junit.BeforeClass;
 import org.junit.Test;

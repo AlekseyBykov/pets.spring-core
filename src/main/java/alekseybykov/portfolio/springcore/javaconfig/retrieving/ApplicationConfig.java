@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.retrieving;
+package alekseybykov.portfolio.springcore.javaconfig.retrieving;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,8 @@ public class ApplicationConfig {
 	// All the beans here are singletons.
 
 	// Because all the dependencies are identified manually,
-	// XML configuration is not required.
+	// XML configuration or additional information about
+	// base package is not provided.
 
 	@Bean(name = {"anotherNameForBeanA", "yetAnotherNameForBeanA"})
 	public BeanA beanA() {

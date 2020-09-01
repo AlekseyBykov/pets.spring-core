@@ -1,13 +1,13 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.di;
+package alekseybykov.portfolio.springcore.javaconfig.di;
 
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanE;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanF;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.BeanG;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.autowiring.ContainerIdentifiedConfig;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanB;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanC;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.BeanD;
-import alekseybykov.portfolio.springcore.javaconfig.beans.di.manual.ManuallyIdentifiedConfig;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanE;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanF;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanG;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.ContainerIdentifiedConfig;
+import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanB;
+import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanC;
+import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanD;
+import alekseybykov.portfolio.springcore.javaconfig.di.manual.ManuallyIdentifiedConfig;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

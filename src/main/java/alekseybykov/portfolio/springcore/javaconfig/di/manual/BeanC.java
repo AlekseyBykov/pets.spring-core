@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.beans.di.manual;
+package alekseybykov.portfolio.springcore.javaconfig.di.manual;
 
 /**
  * @author Aleksey Bykov
