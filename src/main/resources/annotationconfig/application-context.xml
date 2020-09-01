@@ -9,7 +9,7 @@
 
 	<bean id="beanA" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanA"/>
 
-	<bean id="beanE" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanE"/>
+	<bean id="beanH" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanH"/>
 
 	<bean id="beanC" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanC"/>
 

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author Aleksey Bykov
  * @since 01.09.2020
  */
-public class BeanE {
+public class BeanH {
 
 	private BeanC beanC;
 

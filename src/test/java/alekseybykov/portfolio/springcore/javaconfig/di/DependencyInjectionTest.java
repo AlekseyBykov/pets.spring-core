@@ -1,6 +1,7 @@
 package alekseybykov.portfolio.springcore.javaconfig.di;
 
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanE;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanH;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanF;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanG;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.ContainerIdentifiedConfig;
@@ -41,7 +42,7 @@ public class DependencyInjectionTest {
 
 		assertNotNull(beanF);
 
-		alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE beanE = beanF.getBeanE();
+		BeanE beanE = beanF.getBeanE();
 
 		assertNotNull(beanE);
 		assertEquals("string", beanE.getString());
@@ -50,8 +51,8 @@ public class DependencyInjectionTest {
 	@Test
 	public void testAutowiringWithAnnotationConfigs() {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationconfig/application-context.xml");
-		BeanE beanE = applicationContext.getBean(BeanE.class);
+		BeanH beanH = applicationContext.getBean(BeanH.class);
 
-		assertEquals("string", beanE.getBeanC().getBeanD().getString());
+		assertEquals("string", beanH.getBeanC().getBeanD().getString());
 	}
 }
