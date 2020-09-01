@@ -5,7 +5,15 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="beanA" class="alekseybykov.portfolio.springcore.javaconfig.annotations.BeanA"/>
-
 	<context:annotation-config/>
+
+	<bean id="beanA" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanA"/>
+
+	<bean id="beanE" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanE"/>
+
+	<bean id="beanC" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanC"/>
+
+	<bean id="beanD" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanD">
+		<property name="string" value="string"/>
+	</bean>
 </beans>

@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.di.manual;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

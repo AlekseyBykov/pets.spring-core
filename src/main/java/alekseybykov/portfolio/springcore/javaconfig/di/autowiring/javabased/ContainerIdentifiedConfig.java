@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.di.autowiring;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

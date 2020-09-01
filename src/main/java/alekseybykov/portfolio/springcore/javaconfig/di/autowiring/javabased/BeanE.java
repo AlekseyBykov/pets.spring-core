@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.di.autowiring;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

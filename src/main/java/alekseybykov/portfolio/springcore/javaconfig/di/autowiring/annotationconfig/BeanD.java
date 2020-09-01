@@ -1,14 +1,11 @@
-package alekseybykov.portfolio.springcore.javaconfig.annotations;
-
-import org.springframework.beans.factory.annotation.Value;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig;
 
 /**
  * @author Aleksey Bykov
  * @since 01.09.2020
  */
-public class BeanA {
+public class BeanD {
 
-	@Value("string")
 	private String string;
 
 	public String getString() {

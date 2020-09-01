@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.di.manual;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual;
 
 /**
  * @author Aleksey Bykov

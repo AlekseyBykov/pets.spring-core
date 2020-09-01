@@ -1,16 +1,17 @@
 package alekseybykov.portfolio.springcore.javaconfig.di;
 
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanE;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanF;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.BeanG;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.ContainerIdentifiedConfig;
-import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanB;
-import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanC;
-import alekseybykov.portfolio.springcore.javaconfig.di.manual.BeanD;
-import alekseybykov.portfolio.springcore.javaconfig.di.manual.ManuallyIdentifiedConfig;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanE;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanF;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanG;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.ContainerIdentifiedConfig;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanB;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanC;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanD;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.ManuallyIdentifiedConfig;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -22,7 +23,7 @@ import static org.junit.Assert.assertNotNull;
 public class DependencyInjectionTest {
 
 	@Test
-	public void testInjectManuallyIdentifiedDependencies() {
+	public void testAutowiringWithJavaBasedConfigs() {
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManuallyIdentifiedConfig.class);
 		BeanD beanD = applicationContext.getBean(BeanD.class);
 		BeanC beanC = beanD.getBeanC();
@@ -33,19 +34,24 @@ public class DependencyInjectionTest {
 
 		assertNotNull(beanB);
 		assertEquals("string", beanB.getString());
-	}
 
-	@Test
-	public void testAutowiring() {
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ContainerIdentifiedConfig.class);
+		applicationContext = new AnnotationConfigApplicationContext(ContainerIdentifiedConfig.class);
 		BeanG beanG = applicationContext.getBean(BeanG.class);
 		BeanF beanF = beanG.getBeanF();
 
 		assertNotNull(beanF);
 
-		BeanE beanE = beanF.getBeanE();
+		alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE beanE = beanF.getBeanE();
 
 		assertNotNull(beanE);
 		assertEquals("string", beanE.getString());
+	}
+
+	@Test
+	public void testAutowiringWithAnnotationConfigs() {
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationconfig/application-context.xml");
+		BeanE beanE = applicationContext.getBean(BeanE.class);
+
+		assertEquals("string", beanE.getBeanC().getBeanD().getString());
 	}
 }

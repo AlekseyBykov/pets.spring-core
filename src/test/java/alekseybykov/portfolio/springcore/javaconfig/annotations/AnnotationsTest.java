@@ -1,5 +1,6 @@
 package alekseybykov.portfolio.springcore.javaconfig.annotations;
 
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanA;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -17,7 +18,7 @@ public class AnnotationsTest {
 
 	@BeforeClass
 	public static void setUp() {
-		applicationContext = new ClassPathXmlApplicationContext("javaconfig/application-context.xml");
+		applicationContext = new ClassPathXmlApplicationContext("annotationconfig/application-context.xml");
 	}
 
 	@Test
