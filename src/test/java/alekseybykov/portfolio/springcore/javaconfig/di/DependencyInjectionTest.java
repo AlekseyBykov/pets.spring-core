@@ -1,6 +1,7 @@
 package alekseybykov.portfolio.springcore.javaconfig.di;
 
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanH;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanJ;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanF;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanG;
@@ -54,5 +55,9 @@ public class DependencyInjectionTest {
 		BeanH beanH = applicationContext.getBean(BeanH.class);
 
 		assertEquals("string", beanH.getBeanC().getBeanD().getString());
+
+		BeanJ beanJ = applicationContext.getBean(BeanJ.class);
+
+		assertEquals("string", beanJ.getBeanC().getBeanD().getString());
 	}
 }
