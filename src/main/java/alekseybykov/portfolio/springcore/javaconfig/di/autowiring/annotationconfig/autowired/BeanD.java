@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired;
 
 /**
  * @author Aleksey Bykov

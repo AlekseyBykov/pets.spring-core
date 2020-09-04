@@ -1,7 +1,7 @@
 package alekseybykov.portfolio.springcore.javaconfig.di;
 
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanH;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanJ;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanH;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanJ;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanF;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanG;

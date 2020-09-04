@@ -1,6 +1,6 @@
 package alekseybykov.portfolio.springcore.javaconfig.annotations;
 
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanA;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanA;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

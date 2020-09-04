@@ -7,15 +7,15 @@
 
 	<context:annotation-config/>
 
-	<bean id="beanA" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanA"/>
+	<bean id="beanA" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanA"/>
 
-	<bean id="beanH" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanH"/>
+	<bean id="beanH" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanH"/>
 
-	<bean id="beanC" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanC"/>
+	<bean id="beanC" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanC"/>
 
-	<bean id="beanD" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanD">
+	<bean id="beanD" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanD">
 		<property name="string" value="string"/>
 	</bean>
 
-	<bean id="beanJ" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.BeanJ"/>
+	<bean id="beanJ" class="alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanJ"/>
 </beans>
