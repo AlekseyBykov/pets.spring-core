@@ -1,11 +1,5 @@
-package alekseybykov.portfolio.springcore.javaconfig.di;
+package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased;
 
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanH;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanJ;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanE;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanF;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.BeanG;
-import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.javabased.ContainerIdentifiedConfig;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanB;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanC;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.BeanD;
@@ -13,19 +7,18 @@ import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.manual.Manuall
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
  * @author Aleksey Bykov
- * @since 31.08.2020
+ * @since 05.09.2020
  */
-public class DependencyInjectionTest {
+public class AutowiringWithJavaBasedConfigsTest {
 
 	@Test
-	public void testAutowiringWithJavaBasedConfigs() {
+	public void test() {
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManuallyIdentifiedConfig.class);
 		BeanD beanD = applicationContext.getBean(BeanD.class);
 		BeanC beanC = beanD.getBeanC();
@@ -47,17 +40,5 @@ public class DependencyInjectionTest {
 
 		assertNotNull(beanE);
 		assertEquals("string", beanE.getString());
-	}
-
-	@Test
-	public void testAutowiringWithAnnotationConfigs() {
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationconfig/application-context.xml");
-		BeanH beanH = applicationContext.getBean(BeanH.class);
-
-		assertEquals("string", beanH.getBeanC().getBeanD().getString());
-
-		BeanJ beanJ = applicationContext.getBean(BeanJ.class);
-
-		assertEquals("string", beanJ.getBeanC().getBeanD().getString());
 	}
 }
