@@ -6,6 +6,7 @@ import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconf
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.custom.BeanM;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.ootb.BeanZ;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.xml.BeanK;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.resource.BeanR;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -21,7 +22,7 @@ public class AutowiringWithAnnotationConfigsTest {
 	private static final String ROOT = "javaconfig.di.autowiring.annotationconfig";
 
 	@Test
-	public void testInjectionUsingValueAnnotation() {
+	public void testDIUsingValueAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/autowired/application-context.xml"));
 
@@ -30,7 +31,7 @@ public class AutowiringWithAnnotationConfigsTest {
 	}
 
 	@Test
-	public void testInjectionUsingAutowiredAnnotation() {
+	public void testDIUsingAutowiredAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/autowired/application-context.xml"));
 		BeanH beanH = applicationContext.getBean(BeanH.class);
@@ -43,7 +44,7 @@ public class AutowiringWithAnnotationConfigsTest {
 	}
 
 	@Test
-	public void testInjectionUsingOOTBQualifierAnnotation() {
+	public void testDIUsingOOTBQualifierAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/ootb/application-context.xml"));
 
@@ -52,7 +53,7 @@ public class AutowiringWithAnnotationConfigsTest {
 	}
 
 	@Test
-	public void testInjectionUsingXmlQualifierAnnotation() {
+	public void testDIUsingXmlQualifierAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/xml/application-context.xml"));
 		BeanK beanK = applicationContext.getBean(BeanK.class);
@@ -60,10 +61,19 @@ public class AutowiringWithAnnotationConfigsTest {
 	}
 
 	@Test
-	public void testInjectionUsingCustomQualifierAnnotation() {
+	public void testDIUsingCustomQualifierAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/custom/application-context.xml"));
 		BeanM beanM = applicationContext.getBean(BeanM.class);
 		assertEquals("secondBeanN", beanM.getBeanN().getString());
+	}
+
+	// Autowiring by name.
+	@Test
+	public void testDIUsingResourceAnnotation() {
+		ApplicationContext applicationContext =
+				new ClassPathXmlApplicationContext(ROOT.concat("/resource/application-context.xml"));
+		BeanR beanR = applicationContext.getBean(BeanR.class);
+		assertEquals("beanP", beanR.getBean().getString());
 	}
 }

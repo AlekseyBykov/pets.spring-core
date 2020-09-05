@@ -19,7 +19,7 @@ public class BeanZ {
 
 	@Autowired
 	@Qualifier(value = "marked")
-	public void setBean(Bean beanX) {
-		this.bean = beanX;
+	public void setBean(Bean bean) {
+		this.bean = bean;
 	}
 }
