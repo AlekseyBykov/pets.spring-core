@@ -4,6 +4,7 @@ import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconf
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanH;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanJ;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.ootb.BeanZ;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.xml.BeanK;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,6 +20,15 @@ public class AutowiringWithAnnotationConfigsTest {
 	private static final String ROOT = "javaconfig.di.autowiring.annotationconfig";
 
 	@Test
+	public void testInjectionUsingValueAnnotation() {
+		ApplicationContext applicationContext =
+				new ClassPathXmlApplicationContext(ROOT.concat("/autowired/application-context.xml"));
+
+		BeanA beanA = applicationContext.getBean(BeanA.class);
+		assertEquals("string", beanA.getString());
+	}
+
+	@Test
 	public void testInjectionUsingAutowiredAnnotation() {
 		ApplicationContext applicationContext =
 				new ClassPathXmlApplicationContext(ROOT.concat("/autowired/application-context.xml"));
@@ -32,20 +42,19 @@ public class AutowiringWithAnnotationConfigsTest {
 	}
 
 	@Test
-	public void testInjectionUsingQualifierAnnotation() {
+	public void testInjectionUsingOOTBQualifierAnnotation() {
 		ApplicationContext applicationContext =
-				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/application-context.xml"));
+				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/ootb/application-context.xml"));
 
 		BeanZ beanZ = applicationContext.getBean(BeanZ.class);
 		assertEquals("beanY", beanZ.getBean().getString());
 	}
 
 	@Test
-	public void testInjectionUsingValueAnnotation() {
+	public void testInjectionUsingXmlQualifierAnnotation() {
 		ApplicationContext applicationContext =
-				new ClassPathXmlApplicationContext(ROOT.concat("/autowired/application-context.xml"));
-
-		BeanA beanA = applicationContext.getBean(BeanA.class);
-		assertEquals("string", beanA.getString());
+				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/xml/application-context.xml"));
+		BeanK beanK = applicationContext.getBean(BeanK.class);
+		assertEquals("secondBeanL", beanK.getBeanL().getString());
 	}
 }
