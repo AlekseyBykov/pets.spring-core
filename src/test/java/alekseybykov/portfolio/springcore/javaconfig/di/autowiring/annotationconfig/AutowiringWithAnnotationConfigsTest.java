@@ -3,6 +3,7 @@ package alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationcon
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanA;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanH;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.autowired.BeanJ;
+import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.custom.BeanM;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.ootb.BeanZ;
 import alekseybykov.portfolio.springcore.javaconfig.di.autowiring.annotationconfig.qualifier.xml.BeanK;
 import org.junit.Test;
@@ -56,5 +57,13 @@ public class AutowiringWithAnnotationConfigsTest {
 				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/xml/application-context.xml"));
 		BeanK beanK = applicationContext.getBean(BeanK.class);
 		assertEquals("secondBeanL", beanK.getBeanL().getString());
+	}
+
+	@Test
+	public void testInjectionUsingCustomQualifierAnnotation() {
+		ApplicationContext applicationContext =
+				new ClassPathXmlApplicationContext(ROOT.concat("/qualifier/custom/application-context.xml"));
+		BeanM beanM = applicationContext.getBean(BeanM.class);
+		assertEquals("secondBeanN", beanM.getBeanN().getString());
 	}
 }
