@@ -3,9 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-	<bean id="elementLocator" class="alekseybykov.portfolio.springcore.xmlconfig.di.locators.ElementLocator"/>
-	<bean id="elementSearchService" class="alekseybykov.portfolio.springcore.xmlconfig.di.services.ElementSearchService">
-		<constructor-arg ref="elementLocator"/>
+	<bean id="beanC" class="alekseybykov.portfolio.springcore.mixedconfig.BeanC">
+		<property name="string" value="string"/>
 	</bean>
-
 </beans>
